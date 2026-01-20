@@ -21,6 +21,7 @@ func take_damage()->void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var_health = max_health
+	label_3d.modulate = Color.RED
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
