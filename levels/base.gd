@@ -1,12 +1,26 @@
 extends Node3D
 class_name Base
+@onready var label_3d: Label3D = $Label3D
+@export var max_health: int = 5 
+var var_health : int :
+	set(new_health):
+		var_health = new_health
+		label_3d.text = str(var_health) + "/" + str(max_health)
+		if var_health <1:
+			get_tree().reload_current_scene()
+
 
 func take_damage()->void:
 	print("dmg to base")
+	var_health -=1
+	
+
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var_health = max_health
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
