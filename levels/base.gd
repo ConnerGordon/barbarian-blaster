@@ -10,6 +10,11 @@ var var_health : int :
 			get_tree().reload_current_scene()
 
 
+		var red : Color = Color.RED
+		var white : Color = Color.WHITE
+
+		label_3d.modulate=red.lerp(white,float(var_health)/float(max_health))
+
 func take_damage()->void:
 	print("dmg to base")
 	var_health -=1
