@@ -16,7 +16,6 @@ var var_health : int :
 		label_3d.modulate=red.lerp(white,float(var_health)/float(max_health))
 
 func take_damage()->void:
-	print("dmg to base")
 	var_health -=1
 	
 
@@ -26,7 +25,6 @@ func take_damage()->void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var_health = max_health
-	label_3d.modulate = Color.RED
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

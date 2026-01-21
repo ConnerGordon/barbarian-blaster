@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy15q0nd1k07q"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pweg5"]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vfthy"]
+height = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2876l"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1e2k8"]
+top_radius = 0.15
+bottom_radius = 0.1
+height = 0.735
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tront"]
+top_radius = 0.15
+bottom_radius = 0.1
+height = 0.555
+
+[node name="Turret" type="Node3D"]
+
+[node name="turret_base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_pweg5")
+
+[node name="turret_top" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("CylinderMesh_vfthy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.2214712, 1.1391762)
+mesh = SubResource("CylinderMesh_2876l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92011404, 0)
+mesh = SubResource("CylinderMesh_1e2k8")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8278947, 0.4)
+mesh = SubResource("CylinderMesh_tront")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40033507, 0.82800865, 0)
+mesh = SubResource("CylinderMesh_tront")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8278947, -0.4)
+mesh = SubResource("CylinderMesh_tront")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.8278947, 0)
+mesh = SubResource("CylinderMesh_tront")
