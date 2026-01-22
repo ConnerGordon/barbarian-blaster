@@ -3,7 +3,7 @@ class_name TurretManager
 
 @export var turret : PackedScene
 
-
+@export var enmana : Path3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +14,7 @@ func _ready() -> void:
 func build_turret(pos:Vector3)->void:
 	var atur = turret.instantiate()
 	add_child(atur)
+	atur.enpath = enmana
 	atur.global_position = pos
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

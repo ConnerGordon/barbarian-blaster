@@ -110,7 +110,7 @@ material = SubResource("StandardMaterial3D_ty5d8")
 transform = Transform3D(0.96858877, 0, 0.24860094, 0, 1, 0, -0.24860094, 0, 0.96858877, -14.184987, 0, 19.048136)
 
 [node name="enemy2" parent="Path3D" instance=ExtResource("2_n8muh")]
-transform = Transform3D(0.99921167, 0, 0.03925537, 0, 1, 0, -0.03925537, 0, 0.99921167, -14.921269, 0, 14.110351)
+transform = Transform3D(0.99921155, 0, 0.039255366, 0, 1, 0, -0.039255366, 0, 0.99921155, -14.921269, 0, 14.110351)
 progress = 5.0
 
 [node name="enemy3" parent="Path3D" instance=ExtResource("2_n8muh")]
@@ -122,7 +122,7 @@ transform = Transform3D(0.00092750817, 0, -0.9999829, 0, 1, 0, 0.9999829, 0, 0.0
 progress = 15.0
 
 [node name="enemy5" parent="Path3D" instance=ExtResource("2_n8muh")]
-transform = Transform3D(-0.03816354, 0, -0.9992539, 0, 1, 0, 0.9992539, 0, -0.03816354, -3.4151912, 0, 9.432198)
+transform = Transform3D(-0.038163535, 0, -0.9992538, 0, 1, 0, 0.9992538, 0, -0.038163535, -3.4151912, 0, 9.432198)
 progress = 20.0
 
 [node name="Base" parent="." instance=ExtResource("3_ty5d8")]
@@ -133,6 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 0.5970512, 0.8022031, 0, -0.8022031, 0.59705
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../turretManager")
 
-[node name="turretManager" type="Node3D" parent="."]
+[node name="turretManager" type="Node3D" parent="." node_paths=PackedStringArray("enmana")]
 script = ExtResource("5_l5r03")
 turret = ExtResource("6_76r3m")
+enmana = NodePath("../Path3D")
