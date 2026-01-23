@@ -35,14 +35,15 @@ func fbt()->enemy:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	target = fbt()
-	if target is enemy:
+	if target != null:
 		look_at(target.global_position, Vector3.UP,true)
 
 
 func _on_timer_timeout() -> void:
-	if target is enemy:
+	if target != null:
 		var inst = proj.instantiate()
-		inst.position = position + Vector3(0,1,0)
 		add_child(inst)
+		inst.position = position + Vector3(0,1,0)
+		
 		inst.direction = global_transform.basis.z
 	
