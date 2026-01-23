@@ -1,7 +1,7 @@
 extends Node3D
 class_name Base
 @onready var label_3d: Label3D = $Label3D
-@export var max_health: int = 5 
+@export var max_health: int = 50
 var var_health : int :
 	set(new_health):
 		var_health = new_health
@@ -25,7 +25,7 @@ func take_damage()->void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var_health = max_health
-
+	Engine.time_scale = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

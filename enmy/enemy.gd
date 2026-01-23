@@ -1,14 +1,19 @@
 extends PathFollow3D
-
+class_name enemy
 ## speed of the enemy. what else?
 @export var speed:= 10.0
-
+@export var maxhel:= 50
+var health: int:
+	set(nhealth):
+		health = nhealth
+		if health <1:
+			queue_free()
 
 @onready var base : Base = get_tree().get_first_node_in_group("base")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	health = maxhel
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,3 +23,7 @@ func _process(delta: float) -> void:
 	if progress_ratio > 0.990:
 		base.take_damage()
 		queue_free()
+
+
+func tkdmg()->void:
+	health -=30
