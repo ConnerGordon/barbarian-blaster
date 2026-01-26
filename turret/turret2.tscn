@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy15q0nd1k07q"]
+[gd_scene load_steps=9 format=3 uid="uid://dy15q0nd1k07q"]
 
-[ext_resource type="Script" uid="uid://mcmk81numtu7" path="res://turret/turret.gd" id="1_tront"]
+[ext_resource type="Script" uid="uid://bbekvc0dy6enp" path="res://turret/turret_2.gd" id="1_tront"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_pweg5"]
 top_radius = 0.3
@@ -14,6 +14,11 @@ height = 0.5
 top_radius = 0.1
 bottom_radius = 0.1
 height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3ts3n"]
+top_radius = 0.16
+bottom_radius = 0.16
+height = 0.3
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_1e2k8"]
 top_radius = 0.15
@@ -45,9 +50,18 @@ mesh = SubResource("CylinderMesh_vfthy")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.736378, 0.36423773)
 mesh = SubResource("CylinderMesh_2876l")
 
+[node name="nut" type="MeshInstance3D" parent="turret_base/cannon"]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, -1, -4.3711385e-08, 4.3711392e-08, 4.371139e-08, 4.3711392e-08, 1, 0, -0.41816327, 0.039637804)
+mesh = SubResource("CylinderMesh_3ts3n")
+
 [node name="hookneck" type="MeshInstance3D" parent="turret_base"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92011404, 0)
 mesh = SubResource("CylinderMesh_1e2k8")
+
+[node name="nut2" type="MeshInstance3D" parent="turret_base/hookneck"]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 1.2582886, -0.34734958)
+mesh = SubResource("CylinderMesh_3ts3n")
+skeleton = NodePath("../../cannon")
 
 [node name="hookbase" type="MeshInstance3D" parent="turret_base"]
 transform = Transform3D(1, 0, 0, 0, 0.9044924, 0.42648983, 0, -0.42648983, 0.9044924, 0, 1.8495347, -0.19655287)
