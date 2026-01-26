@@ -3,9 +3,17 @@ class_name enemy
 ## speed of the enemy. what else?
 @export var speed:= 10.0
 @export var maxhel:= 50
+
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
 var health: int:
 	set(nhealth):
+		if health > nhealth:
+			animation_player.play("take_damage")
 		health = nhealth
+		
 		if health <1:
 			queue_free()
 

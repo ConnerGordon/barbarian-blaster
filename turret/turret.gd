@@ -7,6 +7,7 @@ var target : Node3D
 @export var turrng := 10.0
 
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 
@@ -41,6 +42,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	if target != null:
+		animation_player.play("fire")
 		var inst = proj.instantiate()
 		add_child(inst)
 		inst.position = position + Vector3(0,1,0)
