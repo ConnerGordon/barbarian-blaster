@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	target = fbt()
 	if target != null:
 		look_at(target.global_position, Vector3.UP,true)
+		
 
 
 func _on_timer_timeout() -> void:

@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy15q0nd1k07q"]
+[gd_scene load_steps=8 format=3 uid="uid://dy15q0nd1k07q"]
+
+[ext_resource type="Script" uid="uid://mcmk81numtu7" path="res://turret/turret.gd" id="1_tront"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_pweg5"]
 top_radius = 0.3
@@ -23,7 +25,13 @@ top_radius = 0.15
 bottom_radius = 0.1
 height = 0.555
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_di7i8"]
+top_radius = 0.7
+bottom_radius = 0.7
+height = 0.5
+
 [node name="Turret" type="Node3D"]
+script = ExtResource("1_tront")
 
 [node name="turret_base" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -33,12 +41,20 @@ mesh = SubResource("CylinderMesh_pweg5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 mesh = SubResource("CylinderMesh_vfthy")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="turret_base"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.2214712, 1.1391762)
+[node name="cannon" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.736378, 0.36423773)
 mesh = SubResource("CylinderMesh_2876l")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="turret_base"]
+[node name="hookneck" type="MeshInstance3D" parent="turret_base"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92011404, 0)
+mesh = SubResource("CylinderMesh_1e2k8")
+
+[node name="hookbase" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 0.9044924, 0.42648983, 0, -0.42648983, 0.9044924, 0, 1.8495347, -0.19655287)
+mesh = SubResource("CylinderMesh_1e2k8")
+
+[node name="hookbase2" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 0.885718, -0.46422377, 0, 0.46422377, 0.885718, 0, 2.4139469, -0.19655287)
 mesh = SubResource("CylinderMesh_1e2k8")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="turret_base"]
@@ -56,3 +72,7 @@ mesh = SubResource("CylinderMesh_tront")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="turret_base"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.8278947, 0)
 mesh = SubResource("CylinderMesh_tront")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="turret_base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3743187, 0)
+mesh = SubResource("CylinderMesh_di7i8")
