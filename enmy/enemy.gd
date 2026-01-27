@@ -8,6 +8,9 @@ class_name enemy
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var bank = get_tree().get_first_node_in_group("goonbank")
 
+@export var diff_man : Node
+
+
 var health: int:
 	set(nhealth):
 		if health > nhealth:

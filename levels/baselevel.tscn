@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6pq5wev0qchc"]
+[gd_scene load_steps=17 format=3 uid="uid://b6pq5wev0qchc"]
 
 [ext_resource type="MeshLibrary" uid="uid://cx04xils0dr2q" path="res://meshlibraries/spacelibrary.tres" id="1_ad0v0"]
 [ext_resource type="Script" uid="uid://ral74uu47e3y" path="res://levels/path_3d.gd" id="2_l5r03"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bm3q537f18c3d" path="res://levels/TurretManager.gd" id="5_l5r03"]
 [ext_resource type="PackedScene" uid="uid://crmtyoi82pkfo" path="res://turret/turret.tscn" id="6_76r3m"]
 [ext_resource type="Script" uid="uid://5ecumuywgjib" path="res://levels/bank.gd" id="7_76r3m"]
+[ext_resource type="PackedScene" uid="uid://kjqfitqpw640" path="res://difficultymanager/difficultymanager.tscn" id="8_bdbma"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_weftf"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -64,9 +65,10 @@ data = {
 "cells": PackedInt32Array(65531, 65535, 0, 65531, 0, 0, 65531, 1, 0, 65531, 2, 0, 65531, 3, 0, 65532, 1, 0, 65533, 65535, 0, 65533, 1, 0, 65533, 3, 0, 65534, 65535, 0, 65534, 1, 0, 65534, 3, 0, 65535, 65535, 0, 65535, 1, 0, 65535, 3, 0, 0, 65535, 0, 0, 1, 0, 0, 3, 0, 1, 65535, 0, 1, 1, 0, 1, 3, 0, 2, 65535, 0, 2, 1, 0, 2, 3, 0, 3, 65535, 0, 3, 1, 0, 3, 3, 0, 4, 65535, 0, 4, 3, 0, 5, 65535, 0, 5, 0, 0, 5, 1, 0, 5, 2, 0, 5, 3, 0)
 }
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="." node_paths=PackedStringArray("diff_man")]
 curve = SubResource("Curve3D_ad0v0")
 script = ExtResource("2_l5r03")
+diff_man = NodePath("../difficultymanager")
 
 [node name="road" type="CSGPolygon3D" parent="Path3D"]
 polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 0.1, 1, 0)
@@ -146,5 +148,7 @@ size_flags_vertical = 8
 text = "Gold:150"
 label_settings = SubResource("LabelSettings_l5r03")
 vertical_alignment = 2
+
+[node name="difficultymanager" parent="." instance=ExtResource("8_bdbma")]
 
 [connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]
