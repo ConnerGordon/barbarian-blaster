@@ -4,9 +4,9 @@ class_name enemy
 @export var speed:= 10.0
 @export var maxhel:= 50
 
-
+@export var defgold := 25
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var bank = get_tree().get_first_node_in_group("goonbank")
 
 var health: int:
 	set(nhealth):
@@ -15,6 +15,7 @@ var health: int:
 		health = nhealth
 		
 		if health <1:
+			bank.gold += defgold
 			queue_free()
 
 @onready var base : Base = get_tree().get_first_node_in_group("base")

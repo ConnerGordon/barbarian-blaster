@@ -130,7 +130,7 @@ script = ExtResource("5_l5r03")
 turret = ExtResource("6_76r3m")
 enmana = NodePath("../Path3D")
 
-[node name="bank" type="MarginContainer" parent="."]
+[node name="bank" type="MarginContainer" parent="." groups=["goonbank"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
