@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6pq5wev0qchc"]
+[gd_scene format=3 uid="uid://b6pq5wev0qchc"]
 
 [ext_resource type="MeshLibrary" uid="uid://cx04xils0dr2q" path="res://meshlibraries/spacelibrary.tres" id="1_ad0v0"]
 [ext_resource type="Script" uid="uid://ral74uu47e3y" path="res://levels/path_3d.gd" id="2_l5r03"]
@@ -43,21 +43,21 @@ font_size = 64
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Baselevel" type="Node3D"]
+[node name="Baselevel" type="Node3D" unique_id=15391425]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=410469281]
 environment = SubResource("Environment_n8muh")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1608578601]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1493072087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 size = Vector3(100, 0.1, 100)
 material = SubResource("StandardMaterial3D_ad0v0")
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=431938036]
 mesh_library = ExtResource("1_ad0v0")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
@@ -65,12 +65,13 @@ data = {
 "cells": PackedInt32Array(65531, 65535, 0, 65531, 0, 0, 65531, 1, 0, 65531, 2, 0, 65531, 3, 0, 65532, 1, 0, 65533, 65535, 0, 65533, 1, 0, 65533, 3, 0, 65534, 65535, 0, 65534, 1, 0, 65534, 3, 0, 65535, 65535, 0, 65535, 1, 0, 65535, 3, 0, 0, 65535, 0, 0, 1, 0, 0, 3, 0, 1, 65535, 0, 1, 1, 0, 1, 3, 0, 2, 65535, 0, 2, 1, 0, 2, 3, 0, 3, 65535, 0, 3, 1, 0, 3, 3, 0, 4, 65535, 0, 4, 3, 0, 5, 65535, 0, 5, 0, 0, 5, 1, 0, 5, 2, 0, 5, 3, 0)
 }
 
-[node name="Path3D" type="Path3D" parent="." node_paths=PackedStringArray("diff_man")]
+[node name="Path3D" type="Path3D" parent="." unique_id=734913535 node_paths=PackedStringArray("diff_man", "victory_layer")]
 curve = SubResource("Curve3D_ad0v0")
 script = ExtResource("2_l5r03")
 diff_man = NodePath("../difficultymanager")
+victory_layer = NodePath("../victorylayer")
 
-[node name="road" type="CSGPolygon3D" parent="Path3D"]
+[node name="road" type="CSGPolygon3D" parent="Path3D" unique_id=802224548]
 polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 0.1, 1, 0)
 mode = 2
 path_node = NodePath("..")
@@ -85,7 +86,7 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_n8muh")
 
-[node name="leftedge" type="CSGPolygon3D" parent="Path3D"]
+[node name="leftedge" type="CSGPolygon3D" parent="Path3D" unique_id=1883320677]
 polygon = PackedVector2Array(-1.1, 0, -1.1, 0.15, -0.9, 0.15, -0.9, 0.15)
 mode = 2
 path_node = NodePath("..")
@@ -100,7 +101,7 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_ty5d8")
 
-[node name="leftedge2" type="CSGPolygon3D" parent="Path3D"]
+[node name="leftedge2" type="CSGPolygon3D" parent="Path3D" unique_id=681004996]
 polygon = PackedVector2Array(1.1, 0, 1.1, 0.15, 0.9, 0.15, 0.9, 0.15)
 mode = 2
 path_node = NodePath("..")
@@ -115,24 +116,24 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_ty5d8")
 
-[node name="Timer" type="Timer" parent="Path3D"]
+[node name="Timer" type="Timer" parent="Path3D" unique_id=1465722539]
 wait_time = 2.0
 autostart = true
 
-[node name="Base" parent="." instance=ExtResource("3_ty5d8")]
+[node name="Base" parent="." unique_id=1278489833 instance=ExtResource("3_ty5d8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.732395, 0, -6.3202825)
 
-[node name="raypickercamera" parent="." node_paths=PackedStringArray("gridmap", "turret_manager") instance=ExtResource("4_ixuwi")]
+[node name="raypickercamera" parent="." unique_id=1108848922 node_paths=PackedStringArray("gridmap", "turret_manager") instance=ExtResource("4_ixuwi")]
 transform = Transform3D(1, 0, 0, 0, 0.5970512, 0.8022031, 0, -0.8022031, 0.5970512, 0, 16.18166, 17.857357)
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../turretManager")
 
-[node name="turretManager" type="Node3D" parent="." node_paths=PackedStringArray("enmana")]
+[node name="turretManager" type="Node3D" parent="." unique_id=286358328 node_paths=PackedStringArray("enmana")]
 script = ExtResource("5_l5r03")
 turret = ExtResource("6_76r3m")
 enmana = NodePath("../Path3D")
 
-[node name="bank" type="MarginContainer" parent="." groups=["goonbank"]]
+[node name="bank" type="MarginContainer" parent="." unique_id=1396650932 groups=["goonbank"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -141,7 +142,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("7_76r3m")
 
-[node name="Label" type="Label" parent="bank"]
+[node name="Label" type="Label" parent="bank" unique_id=45154431]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -149,6 +150,18 @@ text = "Gold:150"
 label_settings = SubResource("LabelSettings_l5r03")
 vertical_alignment = 2
 
-[node name="difficultymanager" parent="." instance=ExtResource("8_bdbma")]
+[node name="difficultymanager" parent="." unique_id=738049279 instance=ExtResource("8_bdbma")]
+
+[node name="victorylayer" type="CanvasLayer" parent="." unique_id=923579249]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="victorylayer" unique_id=1295525145]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.2784314)
 
 [connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]
