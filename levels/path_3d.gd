@@ -24,5 +24,9 @@ func enemy_defeated() ->void:
 		
 func _on_timer_timeout() -> void:
 	spawn_enemy()
-	
-	
+
+
+
+
+func _on_difficultymanager_stopspawning() -> void:
+	timer.stop()

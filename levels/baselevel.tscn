@@ -165,3 +165,4 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.2784314)
 
 [connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]
+[connection signal="stopspawning" from="difficultymanager" to="Path3D" method="_on_difficultymanager_stopspawning"]
