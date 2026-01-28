@@ -17,7 +17,9 @@ func _process(delta: float) -> void:
 func spawn_enemy() ->void:
 	
 	var gen = enem.instantiate()
+	gen.maxhel = diff_man.get_health()
 	add_child(gen)
+	
 	timer.wait_time = diff_man.get_spawn_time()
 
 
