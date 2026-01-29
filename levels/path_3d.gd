@@ -20,7 +20,7 @@ func enemy_defeated() ->void:
 		for child in get_children():
 			if child is enemy:
 				return
-		victory_layer.visible = true
+		victory_layer.victory()
 		
 func _on_timer_timeout() -> void:
 	spawn_enemy()

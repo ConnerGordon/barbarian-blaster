@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://crmtyoi82pkfo" path="res://turret/turret.tscn" id="6_76r3m"]
 [ext_resource type="Script" uid="uid://5ecumuywgjib" path="res://levels/bank.gd" id="7_76r3m"]
 [ext_resource type="PackedScene" uid="uid://kjqfitqpw640" path="res://difficultymanager/difficultymanager.tscn" id="8_bdbma"]
+[ext_resource type="PackedScene" uid="uid://b452o2fa26lyp" path="res://ui/victorylayer.tscn" id="9_lqihp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_weftf"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -152,17 +153,8 @@ vertical_alignment = 2
 
 [node name="difficultymanager" parent="." unique_id=738049279 instance=ExtResource("8_bdbma")]
 
-[node name="victorylayer" type="CanvasLayer" parent="." unique_id=923579249]
+[node name="victorylayer" parent="." unique_id=547531702 instance=ExtResource("9_lqihp")]
 visible = false
-
-[node name="ColorRect" type="ColorRect" parent="victorylayer" unique_id=1295525145]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.2784314)
 
 [connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]
 [connection signal="stopspawning" from="difficultymanager" to="Path3D" method="_on_difficultymanager_stopspawning"]
