@@ -125,7 +125,7 @@ autostart = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.732395, 0, -6.3202825)
 
 [node name="raypickercamera" parent="." unique_id=1108848922 node_paths=PackedStringArray("gridmap", "turret_manager") instance=ExtResource("4_ixuwi")]
-transform = Transform3D(1, 0, 0, 0, 0.5970512, 0.8022031, 0, -0.8022031, 0.5970512, 0, 16.18166, 17.857357)
+transform = Transform3D(1, 0, 0, 0, 0.5970512, 0.8022031, 0, -0.8022031, 0.5970512, 1.3355639, 14.856783, 20.169867)
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../turretManager")
 
