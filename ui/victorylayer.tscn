@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://b452o2fa26lyp"]
 
 [ext_resource type="Script" uid="uid://ucnyenjcao8v" path="res://ui/victorylayer.gd" id="1_yskru"]
+[ext_resource type="FontFile" uid="uid://cnjtcjn321m5o" path="res://assets/Bungee-Regular.ttf" id="2_bkf3r"]
 [ext_resource type="Texture2D" uid="uid://ban4h44jqo3ab" path="res://assets/star.png" id="2_cumbw"]
+
+[sub_resource type="Theme" id="Theme_k5y0o"]
+default_font = ExtResource("2_bkf3r")
 
 [sub_resource type="LabelSettings" id="LabelSettings_xsnsp"]
 font_size = 100
@@ -26,6 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = SubResource("Theme_k5y0o")
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1254348457]
 custom_minimum_size = Vector2(400, 400)

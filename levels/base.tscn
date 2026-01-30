@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gknf8gmqnulw"]
 
 [ext_resource type="Script" uid="uid://berfh3sajdrk5" path="res://levels/base.gd" id="1_ck4x4"]
+[ext_resource type="FontFile" uid="uid://cnjtcjn321m5o" path="res://assets/Bungee-Regular.ttf" id="2_ny664"]
 [ext_resource type="PackedScene" uid="uid://dpt2x3hpmklgk" path="res://assets/Meshes/Base.glb" id="2_shhy1"]
 
 [node name="Base" type="Node3D" unique_id=1748826066 groups=["base"]]
@@ -11,6 +12,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
 billboard = 1
 no_depth_test = true
 text = "5"
+font = ExtResource("2_ny664")
 font_size = 500
 outline_size = 100
 

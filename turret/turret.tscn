@@ -54,6 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2807176, 0.18948245)
 
 [node name="Timer" type="Timer" parent="." unique_id=119965663]
+wait_time = 0.8
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=575770680]

@@ -1,7 +1,7 @@
 extends Node3D
 class_name Base
 @onready var label_3d: Label3D = $Label3D
-@export var max_health: int = 50
+@export var max_health: int = 5
 var var_health : int :
 	set(new_health):
 		var_health = new_health
